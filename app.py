@@ -7,7 +7,7 @@
 
 import streamlit as st
 import pickle
-import docx  # Extract text from Word file
+from docx import Document # Extract text from Word file
 import PyPDF2  # Extract text from PDF
 import re
 
@@ -40,7 +40,7 @@ def extract_text_from_pdf(file):
 
 # Function to extract text from DOCX
 def extract_text_from_docx(file):
-    doc = docx.Document(file)
+    doc = Document(file)
     text = ''
     for paragraph in doc.paragraphs:
         text += paragraph.text + '\n'
